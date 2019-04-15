@@ -47,39 +47,11 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy stuff:
-.scrapy
-
-# Sphinx documentation
-docs/_build/
-
 # PyBuilder
 target/
 
-# Jupyter Notebook
-.ipynb_checkpoints
-
 # pyenv
 .python-version
-
-# celery beat schedule file
-celerybeat-schedule
-
-# SageMath parsed files
-*.sage.py
 
 # Environments
 .env
@@ -102,3 +74,23 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# idea
+.idea/
+*.iws/
+
+# logs
+*.log
+
+# app files
+app_binaries/
+*.apk
+*.app
+*.ipa
+
+.DS_Store
+
+/features/test_results/*
+
+# Screenshots
+*.png
