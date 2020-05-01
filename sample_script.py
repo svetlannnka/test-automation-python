@@ -1,25 +1,18 @@
-from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 
-# init driver
-driver = webdriver.Chrome()
+driver = webdriver.Chrome(executable_path='put_your_path_here')
 
-# open the url
+# Open a page
 driver.get('https://www.google.com/')
+driver.implicitly_wait(4)
 
-search = driver.find_element(By.NAME, 'q')
-search.clear()
-search.send_keys('Dress')
+search_field = driver.find_element(By.NAME, 'q')
+search_field.send_keys('Dress', Keys.ENTER)
 
-# wait for 4 sec
-sleep(4)
-
-# click search
-driver.find_element(By.NAME, 'btnK').click()
-
-# verify
-assert 'Dress' in driver.find_element(By.XPATH, "//div[contains(@class,'commercial-unit-desktop-top')]").text
-assert 'Dress' in driver.find_element(By.XPATH, "//div[@class='g']").text
+# Verify header
+search_result_header = driver.find_element(By.XPATH, '//h3//span').text
+assert 'Dress' in search_result_header, f'Incorrect header: {search_result_header}'
 
 driver.quit()

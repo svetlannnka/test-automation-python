@@ -94,3 +94,5 @@ app_binaries/
 
 # Screenshots
 *.png
+
+chromedriver
